@@ -252,11 +252,11 @@ wiki = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper(top_k_results=1, doc_co
 search = DuckDuckGoSearchRun(name="Search")
 
 # Initialize chat messages in session state
-if "messages" not in st.session_state or st.sidebar.button("Clear message history"):
+if "messages" not in st.session_state or st.sidebar.button("Clear Browse history"):
     st.session_state["messages"] = [{"role": "assistant", "content": "Hi, I'm a chatbot who can search the web. How can I help you?"}]
 
 # Chat history block in the sidebar
-st.sidebar.subheader("Chat History")
+st.sidebar.subheader("Browse History")
 with st.sidebar.expander("View Browse history"):
     for msg in st.session_state.messages:
         if msg["role"] == "assistant":
